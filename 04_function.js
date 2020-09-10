@@ -18,22 +18,22 @@ console.dir(greet);
 
 //анонимные фушкции
 let counter = 0;
-// setInterval( function () {
-//     console.log(++ counter)
-// }, 1000); // интервал повторений
+setInterval( function () {
+    console.log(++ counter)
+}, 1000); // интервал повторений
 
-// setTimeout( function () {
-//     console.log(++ counter)
-//     // clearTimeout(counter);
-// }, 1000); // задержка
-//
-// let interval = setInterval( function () {
-//     if (counter === 5) {
-//         clearInterval(interval);
-//     } else {
-//         console.log(++ counter);
-//     }
-// }, 1000);
+setTimeout( function () {
+    console.log(++ counter)
+    // clearTimeout(counter);
+}, 1000); // задержка
+
+let interval = setInterval( function () {
+    if (counter === 5) {
+        clearInterval(interval);
+    } else {
+        console.log(++ counter);
+    }
+}, 1000);
 
 
 // Стрелочные функции
