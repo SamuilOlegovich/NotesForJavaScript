@@ -1,5 +1,7 @@
-// Function
 
+
+
+// Функции
 // function Declaration
 function greet(name) {
     console.log("Привет - ", name)
@@ -16,7 +18,9 @@ greet2("Лена");
 console.log(typeof greet);
 console.dir(greet);
 
-//анонимные фушкции
+
+
+// Анонимные фушкции
 let counter = 0;
 setInterval( function () {
     console.log(++ counter)
@@ -34,6 +38,7 @@ let interval = setInterval( function () {
         console.log(++ counter);
     }
 }, 1000);
+
 
 
 // Стрелочные функции
@@ -60,6 +65,7 @@ console.log(pow2(5));
 console.log(pow3(5));
 
 
+
 // Параметры по умолчанию
 const sum = (a, b) => a + b;
 console.log(sum(43, 9));
@@ -84,16 +90,15 @@ const  a = sumAll(1, 2, 3, 4, 5);
 console.log(a);
 
 
+
 // Замыкание
 function createMamber(name) {
     return function (lastName) {
         console.log(name + " " + lastName);
     }
 }
-
 const logWithLastName = createMamber("Samuil");
 console.log(logWithLastName);
-
 console.log(logWithLastName("Petrov")); // Samuil Petrov
 console.log(logWithLastName("Popov")); // Samuil Popov
 
