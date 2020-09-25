@@ -30,6 +30,8 @@ function addStyiesTo(node, text, color = "red", fontSize) {
     node.style.textAlign = "center";
     node.style.backgroundColor = "black";
     node.style.padding = "2rem";
+    node.style.display = "block";
+    node.style.width = "100%";  // нужно для ссылки
     if (fontSize) {
         node.style.fontSize = fontSize;
     }
@@ -51,13 +53,42 @@ heading3 = h2List[1];
 heading3 = h2List[h2List.length - 1];
 
 addStyiesTo(heading2);
-addStyiesTo(heading3);
+// addStyiesTo(heading3);
 
 setTimeout(()=> {addStyiesTo(heading, "JavaScript")}, 3000);
-setTimeout(()=> {addStyiesTo(heading2, "практикуйся", "blue")}, 5000);
-setTimeout(()=> {addStyiesTo(heading3, "и все получится!", "green", "2rem")}, 7000);
+setTimeout(()=> {addStyiesTo(heading2, "практикуйся", "blue", "2rem")}, 5000);
+
+const link = heading3.querySelector("a");
+link.addEventListener("click", (event) => {
+   console.log("Click on link", event);
+});
+
+setTimeout(()=> {addStyiesTo(heading3.children[0], "и все получится!", "green")}, 7000);
+
 
 
 // СОБЫТИЯ
+// https://developer.mozilla.org/ru/docs/Web/Events
+heading.onclick = () => {
+    if (heading.style.color === "red") {
+        heading.style.color = "black";
+        heading.style.backgroundColor = "#fff";
+    } else {
+        heading.style.color = "#fff";
+        heading.style.backgroundColor = "#000";
+    }
+}
+
+heading2.addEventListener("dblclick", () => {
+    if (heading2.style.color === "blue") {
+        heading2.style.color = "black";
+        heading2.style.backgroundColor = "#fff";
+    } else {
+        heading2.style.color = "#fff";
+        heading2.style.backgroundColor = "#000";
+    }
+});
+
+// heading3.
 
 
